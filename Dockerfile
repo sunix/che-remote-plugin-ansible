@@ -70,3 +70,6 @@ COPY --from=endpoint /entrypoint.sh /entrypoint.sh
 RUN chmod -R 777 ${HOME}
 
 USER node
+
+ENTRYPOINT /entrypoint.sh
+
