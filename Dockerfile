@@ -67,9 +67,9 @@ COPY --from=endpoint /etc/passwd  /etc/passwd
 COPY --from=endpoint /etc/group   /etc/group
 COPY --from=endpoint /entrypoint.sh /entrypoint.sh
 
-RUN chmod -R 777 ${HOME}
+RUN chmod -R 777 ${HOME} /etc/passwd /etc/group
 
 USER node
 
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["bash", "/entrypoint.sh"]
 
