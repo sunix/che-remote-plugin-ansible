@@ -11,12 +11,12 @@
 #   Red Hat, Inc. - initial API and implementation
 #
 
-cd ${HOME}
+cd /home/theia
 
 [ -f "/before-start.sh" ] && . "/before-start.sh"
 
 # run theia endpoint
-node /home/theia/lib/node/plugin-remote.js &
+export HOME=/home/theia && node /home/theia/lib/node/plugin-remote.js &
 
 PID=$!
 
