@@ -18,15 +18,15 @@ if ! grep -Fq "${USER_ID}" /etc/passwd; then
     # current user is an arbitrary
     # user (its uid is not in the
     # container /etc/passwd). Let's fix that
-    cat ${HOME}/passwd.template | \
+    cat /home/theia/passwd.template | \
     sed "s/\${USER_ID}/${USER_ID}/g" | \
     sed "s/\${GROUP_ID}/${GROUP_ID}/g" | \
-    sed "s/\${HOME}/\/home\/theia/g" > /etc/passwd
+    sed "s/\${HOME}/\/projects/g" > /etc/passwd
 
-    cat ${HOME}/group.template | \
+    cat /home/theia/group.template | \
     sed "s/\${USER_ID}/${USER_ID}/g" | \
     sed "s/\${GROUP_ID}/${GROUP_ID}/g" | \
-    sed "s/\${HOME}/\/home\/theia/g" > /etc/group
+    sed "s/\${HOME}/\/projects/g" > /etc/group
 fi
 
 # Grant access to projects volume in case of non root user with sudo rights
