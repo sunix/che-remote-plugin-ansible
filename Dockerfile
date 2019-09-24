@@ -73,6 +73,6 @@ RUN chmod -R 777 ${HOME} /etc/passwd /etc/group
 
 USER node
 
-ENTRYPOINT ["bash", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash", "/cmd.sh"]
 

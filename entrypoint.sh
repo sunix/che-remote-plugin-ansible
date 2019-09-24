@@ -49,5 +49,6 @@ set -e
 # on callback, kill the last background process, which is `tail -f /dev/null` and execute the specified handler
 trap 'responsible_shutdown' SIGHUP SIGTERM SIGINT
 
+exec "$@"
 
 
